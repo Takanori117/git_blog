@@ -1,0 +1,20 @@
+<div class = "contents-row">
+ <div class= "blog-new">
+<div class ="blog-title"> <%= @article.title %></div>
+  <%= simple_format (@article.text)%>
+  <span class = "user_name">投稿者：<%= @article.user.name %> </span>
+  <% if user_signed_in? && current_user.id == @article.user_id %>
+  <ul class = "delete_button">
+  <li class= "article-detail">
+   <%= link_to "削除", "/articles/#{@article.id}", method: :delete, class: "btn-square" %>
+  </li>
+  <li class= "article-detail">
+   <%= link_to "編集", "/articles/#{@article.id}/edit", class: "btn-square" %>
+  </li>
+  </ul>
+  <% end %>
+  </div>
+  </div>
+  <div class ="return-button">
+ <%= link_to "トップへ戻る", root_path %></div>
+</div>

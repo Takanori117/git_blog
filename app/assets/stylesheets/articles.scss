@@ -1,0 +1,49 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.blog, .blog-new, .user-show{
+    border-style:solid;
+    border-color:yellow;
+    text-align:center;
+    margin:20px 70px;
+}
+
+.button, .delete_button{
+    list-style:none;
+}
+.article-detail{
+    display:inline-block;
+    padding:15px;
+}
+.blog-title{
+    font-size:30px;
+    background-color:#faebd7;
+}
+.blog-text{
+  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.return-button{
+    text-align:center;
+}
+.user-name{
+    text-align:center;
+    font-size:40px;
+}
+.btn-square{
+    display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.btn-square:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}

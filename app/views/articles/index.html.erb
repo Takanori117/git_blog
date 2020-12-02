@@ -1,0 +1,28 @@
+<div class = "contents-row">
+<% @articles.each do |article| %>
+
+<div class = "blog">
+<div class ="blog-title">タイトル: <%= article.title %></div>
+  <div class ="blog-text">
+  <%= simple_format (article.text)%>
+  </div>
+  <span class = "user_name">投稿者：<%= article.user.name %> </span>
+  <% if user_signed_in? && current_user.id == article.user_id %>
+  <ul class = "button">
+  <li class ="article-detail"> 
+   <%= link_to "詳細", "articles/#{article.id}", class: "btn-square" %>
+   </li>
+  <li class ="article-detail">
+   <%= link_to "削除", "articles/#{article.id}", method: :delete, class: "btn-square" %>
+  </li>
+  <li class ="article-detail">
+   <%= link_to "編集", "articles/#{article.id}/edit", class: "btn-square" %>
+  </li>
+  </ul>
+  <% end %>
+
+</div>
+<% end %>
+
+<%= paginate(@articles) %>
+</div>

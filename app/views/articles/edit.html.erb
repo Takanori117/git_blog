@@ -1,0 +1,10 @@
+<div class = "contens row"> 
+  <%= form_tag("/articles/#{@article.id}", method: :patch) do %>
+    <h3>編集する</h3>
+    <input type = "string" name = "title" value=<%= @article.title %> placeholder = "タイトル">
+    <textarea type = "text" name = "text" placeholder ="本文" rows="10" cols="30"><%= @article.text %></textarea>
+  <input type="submit" value="SEND">
+  <% end %>
+  
+</div>
+  

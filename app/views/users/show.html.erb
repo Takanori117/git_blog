@@ -1,0 +1,16 @@
+<div class ="contents-row">
+ 
+ <p class= "user-name"><%= @name %>さんの投稿一覧</p>
+ 
+ <% @articles.each do |article| %>
+ <div class= "user-show">
+ <div class="blog-title"> <%= article.title %></div>
+  <%= simple_format(article.text) %>
+  </div>
+<% end %>
+<div class="return-button">
+<%= link_to "トップへ戻る", root_path %></div>
+
+<%= paginate(@articles) %>
+</div>
+  
